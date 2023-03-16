@@ -1,0 +1,112 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,
+        "Items": [
+            //left part
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "Items": [
+   
+                            //logo
+                            {
+                                "BlockType": "image",
+                                "Height": 40,
+                                "MarginRight": 0,
+                                "VerticalAlignment": "Center",
+                                "ImageOptions": {
+                                    "Path": "{Item.Team.LogoPath}",
+                                    "VerticalAlignment": "Center"
+                                }
+                            },
+                        //Cars
+                            {
+                                "BlockType": "image",
+                                "Height": 60,
+                                "MarginRight": 100,
+                                "VerticalAlignment": "Center",
+                                "HorizontalAlignment": "Left",
+                                "Source": "images/cars/default.png"
+                            },
+                            //name
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.Team.Name}",
+                                //"MarginRight": 4,
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameDefault}",
+                                "FontSize": 22,
+                                "TextOptions": {
+                                    "VerticalAlignment": "Center"
+                                }
+                            },
+                            {
+                        "BlockType": "stack",
+                        "VerticalAlignment": "Center",
+                        "Spacing": 8,
+                        "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                        "Items": [
+                            //name
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.Car.Name}",
+                                "MarginRight": 8,
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameDefault}",
+                                "FontSize": 22,
+                                "TextOptions": {
+                                    "VerticalAlignment": "Center"
+                                }
+                            },
+
+                        ]
+                    },    
+    
+                    //name
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 600,
+                        "MarginLeft": 8,
+                        "Source": "{Item.Driver.Name}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 42
+                    },
+    
+                    //icon badges
+                    {
+                        "BlockType": "itemstack",
+                        "Spacing": 4,
+                        "MarginLeft": 6,
+                        "MarginTop": 4,
+                        "ItemStackOptions": {
+                            "ItemSource": "{Item.Driver.BadgeImages}",
+                            "Template": {
+                                "BlockType": "image",
+                                "Height": 24,
+                                "Source": "{Item}"
+                            }
+                        }
+                    },
+    
+                    //text badge
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 400,
+                        "MarginLeft": 8,
+                        "MarginTop": 8,
+                        "Source": "{Item.Driver.BadgeText}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 16
+                    }
+                ]
+            }
+        ]
+    }
